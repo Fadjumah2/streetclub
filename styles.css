@@ -34,3 +34,7 @@ body.menu-open .floating-contact{visibility:hidden}
 footer{padding-bottom:110px}
 @media(max-width:800px){.floating-contact{width:52px;height:52px;bottom:calc(18px + env(safe-area-inset-bottom,0px))}.floating-call{left:calc(16px + env(safe-area-inset-left,0px))}.floating-whatsapp{right:calc(16px + env(safe-area-inset-right,0px))}.floating-contact svg{width:26px;height:26px}}
 @media(prefers-reduced-motion:reduce){.floating-contact{transition:none}}
+
+/* Desktop hero quality: avoid unnecessary upscaling/overscan while preserving mobile presentation. */
+@keyframes heroInDesktop{from{transform:scale(1.025);filter:brightness(.72)}to{transform:scale(1);filter:brightness(1)}}
+@media(min-width:801px){.hero-bg{inset:0;transform:none;background-position:center center;background-size:cover;image-rendering:auto;animation:heroInDesktop 1.2s cubic-bezier(.2,.7,.2,1) both;will-change:transform}.hero{min-height:100vh;min-height:100svh}}

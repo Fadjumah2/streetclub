@@ -9,13 +9,7 @@ const sections=[...document.querySelectorAll("main section[id]")],links=[...docu
 const cursor=document.querySelector(".cursor"),dot=document.querySelector(".cursor-dot");window.addEventListener("pointermove",e=>{if(!cursor)return;cursor.classList.add("is-visible");cursor.style.left=e.clientX+"px";cursor.style.top=e.clientY+"px";dot.style.left=e.clientX+"px";dot.style.top=e.clientY+"px"});document.querySelectorAll("a,button").forEach(el=>{el.addEventListener("mouseenter",()=>cursor?.classList.add("is-hover"));el.addEventListener("mouseleave",()=>cursor?.classList.remove("is-hover"))});
 document.querySelectorAll(".magnetic").forEach(el=>{el.addEventListener("pointermove",e=>{const r=el.getBoundingClientRect();el.style.transform="translate("+((e.clientX-r.left-r.width/2)*.08)+"px,"+((e.clientY-r.top-r.height/2)*.08)+"px)"});el.addEventListener("pointerleave",()=>el.style.transform="")});
 
-// Use the much higher-detail local image for large desktop hero surfaces only.
-// Mobile keeps venue-04.jpeg because its crop/composition already works well there.
-const heroBg=document.querySelector(".hero-bg");
-if(heroBg&&window.matchMedia("(min-width: 801px)").matches){
-  heroBg.style.backgroundImage='url("assets/images/street-club/photo-11.webp")';
-  heroBg.style.backgroundPosition="center center";
-}
+// Responsive hero images are controlled by styles.css.
 
 const reservationForm=document.getElementById("reservation-form");
 const reservationDate=document.getElementById("reservation-date");

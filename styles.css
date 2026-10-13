@@ -1,40 +1,1253 @@
-:root{--bg:#090909;--surface:#11110f;--text:#f3f0e8;--muted:#a8a39a;--line:rgba(243,240,232,.16);--accent:#d8ff3e;--max:1440px}*{box-sizing:border-box}html{scroll-behavior:auto}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;overflow-x:hidden}body.menu-open{overflow:hidden}a{color:inherit;text-decoration:none}.site-grain{position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}.progress{position:fixed;z-index:101;top:0;left:0;height:2px;width:0;background:var(--accent);pointer-events:none}.cursor,.cursor-dot{position:fixed;pointer-events:none;z-index:200;border-radius:50%;transform:translate(-50%,-50%);opacity:0}@media(pointer:fine){.cursor{width:38px;height:38px;border:1px solid rgba(255,255,255,.55);transition:width .2s,height .2s,opacity .2s}.cursor-dot{width:4px;height:4px;background:var(--accent);opacity:1}.cursor.is-visible{opacity:1}.cursor.is-hover{width:62px;height:62px;background:rgba(216,255,62,.08);border-color:var(--accent)}}.nav{position:fixed;top:0;left:0;width:100%;z-index:90;padding:24px 4vw;display:flex;align-items:center;justify-content:space-between;transition:background .35s,padding .35s,backdrop-filter .35s}.nav.scrolled{padding-top:15px;padding-bottom:15px;background:rgba(9,9,9,.76);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}.brand{display:flex;align-items:center;gap:10px;font:500 15px/.84 Oswald,sans-serif;letter-spacing:1px}.brand-logo{width:42px;height:42px;display:block;flex:0 0 42px;object-fit:cover;border-radius:50%}.nav nav{display:flex;gap:38px;font-size:11px;text-transform:uppercase;letter-spacing:1.8px}.nav nav a{position:relative;opacity:.65;transition:opacity .2s}.nav nav a:after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:1px;background:var(--accent);transition:width .25s}.nav nav a:hover,.nav nav a.active{opacity:1}.nav nav a.active:after{width:100%}.nav-cta{border:1px solid var(--line);padding:12px 18px;font-size:10px;text-transform:uppercase;letter-spacing:1.5px}.nav-cta span{color:var(--accent);margin-left:18px}.menu{display:none}.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;padding:0 7vw 9vh;overflow:hidden}.hero-bg,.feature-photo,.split-photo,.gallery>div,.visit-bg{background-position:center;background-size:cover;background-repeat:no-repeat}.hero-bg{position:absolute;inset:-3%;background-image:url("assets/images/street-club/venue-04.jpeg");transform:scale(1.03);animation:heroIn 1.4s cubic-bezier(.2,.7,.2,1) both}.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.84),rgba(0,0,0,.18) 75%),linear-gradient(0deg,rgba(0,0,0,.82),transparent 58%)}.hero-index{position:absolute;right:7vw;top:48%;writing-mode:vertical-rl;font:10px Oswald;letter-spacing:2px;color:#aaa59c;opacity:.8}.hero-index span{color:var(--accent);margin-top:15px}.hero-content{position:relative;max-width:900px}.eyebrow,.section-tag{font-size:10px;letter-spacing:2.7px;text-transform:uppercase;color:#d0cbc1}.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:23px}.eyebrow span{width:38px;height:1px;background:var(--accent)}h1,h2,h3{font-family:Oswald,sans-serif;font-weight:500;margin:0;text-transform:uppercase}h1{font-size:clamp(72px,10.5vw,160px);line-height:.81;letter-spacing:-3px}h1 em{font-style:normal;color:var(--accent)}.hero-copy{max-width:430px;color:#ddd;margin:30px 0;font-size:16px;line-height:1.65}.hero-actions{display:flex;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:40px;padding:15px 19px;font-size:10px;text-transform:uppercase;letter-spacing:1.7px;transition:transform .25s,background .25s}.btn-light{background:var(--text);color:#090909}.btn-ghost{border:1px solid rgba(255,255,255,.32)}.btn:hover{transform:translateY(-2px)}.btn-light:hover{background:var(--accent)}.btn span{font-size:15px}.hero-bottom{position:absolute;bottom:24px;left:7vw;right:7vw;display:flex;gap:13px;font-size:9px;letter-spacing:2px;color:#bdb8af}.hero-bottom .scroll{margin-left:auto}.section-pad{max-width:var(--max);margin:auto;padding:145px 7vw}.section-tag{display:flex;gap:12px;align-items:center}.section-tag span{color:var(--accent)}.intro-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:8vw;margin-top:55px}.intro h2,.events h2,.visit h2{font-size:clamp(50px,6.8vw,100px);line-height:.88;letter-spacing:-1px}.intro h2 span,.events h2 span,.visit h2 span{color:var(--accent)}.intro-copy{padding-top:8px;max-width:470px}.intro-copy p{font-size:17px;line-height:1.75;color:#c1bdb5;margin:0 0 22px}.pill-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:35px}.pill-row span{font-size:9px;letter-spacing:1.5px;border:1px solid var(--line);padding:9px 11px}.feature-image{height:78vh;position:relative;overflow:hidden}.feature-photo{position:absolute;inset:0;background-image:url("assets/images/street-club/photo-13.webp");transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}.feature-image:hover .feature-photo{transform:scale(1.025)}.feature-photo:after,.split-photo:after,.gallery>div:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent 48%)}.photo-caption{position:absolute;z-index:2;bottom:28px;left:7vw;right:7vw;display:flex;justify-content:space-between;font:10px Oswald;letter-spacing:2px}.split{display:grid;grid-template-columns:1fr 1fr;min-height:90vh}.split-copy{display:flex;flex-direction:column;justify-content:center}.split-copy h2{font-size:clamp(58px,7vw,105px);line-height:.84;margin:40px 0}.split-copy h2 span{color:var(--accent)}.split-copy p{max-width:420px;color:#aaa59c;line-height:1.7}.text-link{margin-top:30px;font-size:10px;letter-spacing:1.7px;text-transform:uppercase;width:max-content;border-bottom:1px solid #666;padding-bottom:8px}.text-link b{color:var(--accent);font-size:15px;margin-left:12px}.split-photo{position:relative;background-image:url("assets/images/street-club/venue-02.jpeg");overflow:hidden}.split-photo:hover{filter:brightness(1.05)}.vertical-label{position:absolute;right:22px;top:50%;writing-mode:vertical-rl;font:10px Oswald;letter-spacing:2px;z-index:2}.image-number{position:absolute;z-index:2;bottom:26px;left:28px;font:10px Oswald;letter-spacing:2px;color:#d8ff3e}.events{background:var(--surface);max-width:none}.events-head{display:flex;justify-content:space-between;align-items:end;gap:60px;margin:55px 0 80px}.events-head p{max-width:380px;color:#aaa59c;line-height:1.65}.event-list{border-top:1px solid var(--line)}.event-list article{display:grid;grid-template-columns:80px 1fr 30px;align-items:center;border-bottom:1px solid var(--line);padding:26px 0;transition:padding .3s,background .3s}.event-list article:hover{padding-left:14px;background:rgba(216,255,62,.035)}.event-no,small{font-size:9px;letter-spacing:2px;color:#888}.event-list h3{font-size:clamp(25px,3vw,43px);letter-spacing:.5px;margin-top:8px}.arrow{color:var(--accent);font-size:20px}.gallery{display:grid;grid-template-columns:1.3fr .7fr;grid-template-rows:65vh 22vh;position:relative}.gallery>div{position:relative}.gallery-large{grid-row:1/3;background-image:url("assets/images/street-club/venue-03.jpeg")}.photo-4{background-image:url("assets/images/street-club/venue-04.jpeg")}.gallery-copy{padding:25px 30px;background:var(--accent)!important;color:#090909;display:flex;flex-direction:column;justify-content:space-between;z-index:2}.gallery-copy span{font-size:10px;letter-spacing:2px}.gallery-copy strong{font:500 clamp(42px,5vw,72px)/.82 Oswald;text-transform:uppercase}.gallery-copy em{font:10px Oswald;letter-spacing:2px;font-style:normal}.visit{min-height:88vh;position:relative;padding:120px 7vw;display:flex;align-items:center}.visit-bg{position:absolute;inset:0;background-image:url("assets/images/street-club/visit.jpg")}.visit-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.48))}.visit-content{position:relative;width:100%;max-width:var(--max);margin:auto}.visit h2{margin:45px 0 65px}.visit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;border-top:1px solid var(--line);padding-top:25px;margin-bottom:50px}.visit-grid small{display:block;margin-bottom:12px}.visit-grid p{font-size:15px;line-height:1.6;color:#ddd}.visit-grid a{border-bottom:1px solid #777}footer{padding:65px 7vw 25px;background:#050505}.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:70px}.footer-top small{display:block;margin-bottom:15px}.footer-top p{color:#aaa59c;font-size:13px;line-height:1.7}.footer-bottom{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;color:#666;font-size:9px;letter-spacing:1.5px;text-transform:uppercase}.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:none}@keyframes heroIn{from{transform:scale(1.12);filter:brightness(.6)}to{transform:scale(1.03);filter:brightness(1)}}@media(max-width:800px){.nav{padding:18px 20px}.nav.scrolled{padding:12px 20px}.nav nav{position:fixed;inset:0;display:flex;visibility:hidden;opacity:0;pointer-events:none;flex-direction:column;justify-content:center;gap:24px;padding:90px 28px;background:rgba(9,9,9,.97);backdrop-filter:blur(20px);transition:opacity .3s,visibility .3s}.nav nav.open{visibility:visible;opacity:1;pointer-events:auto}.nav nav a{font:500 48px/.95 Oswald;text-transform:uppercase;letter-spacing:-.5px}.nav nav a:after{display:none}.nav-cta{display:none}.menu{display:flex;position:relative;z-index:2;flex-direction:column;gap:6px;background:none;border:0;padding:8px}.menu i{display:block;width:25px;height:1px;background:#fff;transition:transform .25s}.menu.open i:first-child{transform:translateY(3.5px) rotate(45deg)}.menu.open i:last-child{transform:translateY(-3.5px) rotate(-45deg)}.hero{padding:0 20px 72px;min-height:100svh}.hero-bg{background-position:60% center}.hero-overlay{background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.2)),linear-gradient(0deg,rgba(0,0,0,.85),transparent 60%)}.hero-index{right:20px;top:40%;font-size:8px}h1{font-size:clamp(62px,18vw,105px);letter-spacing:-2px}.hero-copy{font-size:15px;margin:20px 0}.hero-actions{flex-direction:column;align-items:stretch}.hero-bottom{left:20px;right:20px;bottom:18px;font-size:8px}.hero-bottom .scroll{display:none}.section-pad{padding:90px 20px}.intro-grid{grid-template-columns:1fr;gap:35px;margin-top:40px}.intro h2,.events h2{font-size:58px}.intro-copy p{font-size:16px}.feature-image{height:58vh}.split{grid-template-columns:1fr;min-height:auto}.split-copy{padding:90px 20px}.split-copy h2{font-size:65px;margin:35px 0}.split-photo{height:65vh}.events-head{display:block;margin:40px 0}.events-head p{margin-top:30px}.event-list article{grid-template-columns:45px 1fr 20px;padding:20px 0}.event-list h3{font-size:25px}.gallery{grid-template-columns:1fr;grid-template-rows:60vh 35vh 22vh}.gallery-large{grid-row:auto}.visit{min-height:auto;padding:90px 20px}.visit h2{font-size:65px;margin:35px 0 50px}.visit-grid{grid-template-columns:1fr;gap:25px;margin-bottom:40px}.footer-top{grid-template-columns:1fr 1fr;padding-bottom:45px}.footer-brand{grid-column:1/-1}.footer-bottom{gap:20px}.footer-bottom span:last-child{display:none}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.hero-bg{animation:none;transition:none}.cursor,.cursor-dot{display:none}}
+:root{
+  --bg:#090909;
+  --surface:#11110f;
+  --text:#f3f0e8;
+  --muted:#a8a39a;
+  --line:rgba(243,240,232,.16);
+  --accent:#d8ff3e;
+  --max:1440px
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:auto}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden
+}
+
+body.menu-open{overflow:hidden}
+
+a{
+  color:inherit;
+  text-decoration:none
+}
+
+.site-grain{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  pointer-events:none;
+  opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")
+}
+
+.progress{
+  position:fixed;
+  z-index:101;
+  top:0;
+  left:0;
+  height:2px;
+  width:0;
+  background:var(--accent);
+  pointer-events:none
+}
+
+.cursor,.cursor-dot{
+  position:fixed;
+  pointer-events:none;
+  z-index:200;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  opacity:0
+}
+
+@media(pointer:fine){
+  .cursor{
+    width:38px;
+    height:38px;
+    border:1px solid rgba(255,255,255,.55);
+    transition:width .2s,height .2s,opacity .2s
+  }
+
+  .cursor-dot{
+    width:4px;
+    height:4px;
+    background:var(--accent);
+    opacity:1
+  }
+
+  .cursor.is-visible{opacity:1}
+
+  .cursor.is-hover{
+    width:62px;
+    height:62px;
+    background:rgba(216,255,62,.08);
+    border-color:var(--accent)
+  }
+}
+
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:90;
+  padding:24px 4vw;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  transition:background .35s,padding .35s,backdrop-filter .35s
+}
+
+.nav.scrolled{
+  padding-top:15px;
+  padding-bottom:15px;
+  background:rgba(9,9,9,.76);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.08)
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font:500 15px/.84 Oswald,sans-serif;
+  letter-spacing:1px
+}
+
+.brand-logo{
+  width:42px;
+  height:42px;
+  display:block;
+  flex:0 0 42px;
+  object-fit:cover;
+  border-radius:50%
+}
+
+.nav nav{
+  display:flex;
+  gap:38px;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1.8px
+}
+
+.nav nav a{
+  position:relative;
+  opacity:.65;
+  transition:opacity .2s
+}
+
+.nav nav a:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0;
+  height:1px;
+  background:var(--accent);
+  transition:width .25s
+}
+
+.nav nav a:hover,
+.nav nav a.active{opacity:1}
+
+.nav nav a.active:after{width:100%}
+
+.nav-cta{
+  border:1px solid var(--line);
+  padding:12px 18px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1.5px
+}
+
+.nav-cta span{
+  color:var(--accent);
+  margin-left:18px
+}
+
+.menu{display:none}
+
+
+/* HERO */
+
+.hero{
+  min-height:100svh;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  padding:0 7vw 9vh;
+  overflow:hidden
+}
+
+.hero-bg,
+.feature-photo,
+.split-photo,
+.gallery>div,
+.visit-bg{
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat
+}
+
+/*
+  Default/mobile hero remains the ORIGINAL photo.
+*/
+.hero-bg{
+  position:absolute;
+  inset:-3%;
+  background-image:url("assets/images/street-club/venue-04.jpeg");
+  transform:scale(1.03);
+  animation:heroIn 1.4s cubic-bezier(.2,.7,.2,1) both
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.84),rgba(0,0,0,.18) 75%),
+    linear-gradient(0deg,rgba(0,0,0,.82),transparent 58%)
+}
+
+.hero-index{
+  position:absolute;
+  right:7vw;
+  top:48%;
+  writing-mode:vertical-rl;
+  font:10px Oswald;
+  letter-spacing:2px;
+  color:#aaa59c;
+  opacity:.8
+}
+
+.hero-index span{
+  color:var(--accent);
+  margin-top:15px
+}
+
+.hero-content{
+  position:relative;
+  max-width:900px
+}
+
+.eyebrow,.section-tag{
+  font-size:10px;
+  letter-spacing:2.7px;
+  text-transform:uppercase;
+  color:#d0cbc1
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:23px
+}
+
+.eyebrow span{
+  width:38px;
+  height:1px;
+  background:var(--accent)
+}
+
+h1,h2,h3{
+  font-family:Oswald,sans-serif;
+  font-weight:500;
+  margin:0;
+  text-transform:uppercase
+}
+
+h1{
+  font-size:clamp(72px,10.5vw,160px);
+  line-height:.81;
+  letter-spacing:-3px
+}
+
+h1 em{
+  font-style:normal;
+  color:var(--accent)
+}
+
+.hero-copy{
+  max-width:430px;
+  color:#ddd;
+  margin:30px 0;
+  font-size:16px;
+  line-height:1.65
+}
+
+.hero-actions{
+  display:flex;
+  gap:10px
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  padding:15px 19px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1.7px;
+  transition:transform .25s,background .25s
+}
+
+.btn-light{
+  background:var(--text);
+  color:#090909
+}
+
+.btn-ghost{
+  border:1px solid rgba(255,255,255,.32)
+}
+
+.btn:hover{transform:translateY(-2px)}
+
+.btn-light:hover{background:var(--accent)}
+
+.btn span{font-size:15px}
+
+.hero-bottom{
+  position:absolute;
+  bottom:24px;
+  left:7vw;
+  right:7vw;
+  display:flex;
+  gap:13px;
+  font-size:9px;
+  letter-spacing:2px;
+  color:#bdb8af
+}
+
+.hero-bottom .scroll{margin-left:auto}
+
+
+/* MAIN SECTIONS */
+
+.section-pad{
+  max-width:var(--max);
+  margin:auto;
+  padding:145px 7vw
+}
+
+.section-tag{
+  display:flex;
+  gap:12px;
+  align-items:center
+}
+
+.section-tag span{color:var(--accent)}
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:8vw;
+  margin-top:55px
+}
+
+.intro h2,
+.events h2,
+.visit h2{
+  font-size:clamp(50px,6.8vw,100px);
+  line-height:.88;
+  letter-spacing:-1px
+}
+
+.intro h2 span,
+.events h2 span,
+.visit h2 span{
+  color:var(--accent)
+}
+
+.intro-copy{
+  padding-top:8px;
+  max-width:470px
+}
+
+.intro-copy p{
+  font-size:17px;
+  line-height:1.75;
+  color:#c1bdb5;
+  margin:0 0 22px
+}
+
+.pill-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:35px
+}
+
+.pill-row span{
+  font-size:9px;
+  letter-spacing:1.5px;
+  border:1px solid var(--line);
+  padding:9px 11px
+}
+
+.feature-image{
+  height:78vh;
+  position:relative;
+  overflow:hidden
+}
+
+.feature-photo{
+  position:absolute;
+  inset:0;
+  background-image:url("assets/images/street-club/photo-13.webp");
+  transition:transform 1.2s cubic-bezier(.2,.7,.2,1)
+}
+
+.feature-image:hover .feature-photo{
+  transform:scale(1.025)
+}
+
+.feature-photo:after,
+.split-photo:after,
+.gallery>div:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.55),transparent 48%)
+}
+
+.photo-caption{
+  position:absolute;
+  z-index:2;
+  bottom:28px;
+  left:7vw;
+  right:7vw;
+  display:flex;
+  justify-content:space-between;
+  font:10px Oswald;
+  letter-spacing:2px
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:90vh
+}
+
+.split-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center
+}
+
+.split-copy h2{
+  font-size:clamp(58px,7vw,105px);
+  line-height:.84;
+  margin:40px 0
+}
+
+.split-copy h2 span{color:var(--accent)}
+
+.split-copy p{
+  max-width:420px;
+  color:#aaa59c;
+  line-height:1.7
+}
+
+.text-link{
+  margin-top:30px;
+  font-size:10px;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+  width:max-content;
+  border-bottom:1px solid #666;
+  padding-bottom:8px
+}
+
+.text-link b{
+  color:var(--accent);
+  font-size:15px;
+  margin-left:12px
+}
+
+.split-photo{
+  position:relative;
+  background-image:url("assets/images/street-club/venue-02.jpeg");
+  overflow:hidden
+}
+
+.split-photo:hover{filter:brightness(1.05)}
+
+.vertical-label{
+  position:absolute;
+  right:22px;
+  top:50%;
+  writing-mode:vertical-rl;
+  font:10px Oswald;
+  letter-spacing:2px;
+  z-index:2
+}
+
+.image-number{
+  position:absolute;
+  z-index:2;
+  bottom:26px;
+  left:28px;
+  font:10px Oswald;
+  letter-spacing:2px;
+  color:#d8ff3e
+}
+
+
+/* EVENTS */
+
+.events{
+  background:var(--surface);
+  max-width:none
+}
+
+.events-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:60px;
+  margin:55px 0 80px
+}
+
+.events-head p{
+  max-width:380px;
+  color:#aaa59c;
+  line-height:1.65
+}
+
+.event-list{
+  border-top:1px solid var(--line)
+}
+
+.event-list article{
+  display:grid;
+  grid-template-columns:80px 1fr 30px;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+  padding:26px 0;
+  transition:padding .3s,background .3s
+}
+
+.event-list article:hover{
+  padding-left:14px;
+  background:rgba(216,255,62,.035)
+}
+
+.event-no,small{
+  font-size:9px;
+  letter-spacing:2px;
+  color:#888
+}
+
+.event-list h3{
+  font-size:clamp(25px,3vw,43px);
+  letter-spacing:.5px;
+  margin-top:8px
+}
+
+.arrow{
+  color:var(--accent);
+  font-size:20px
+}
+
+
+/* GALLERY */
+
+.gallery{
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  grid-template-rows:65vh 22vh;
+  position:relative
+}
+
+.gallery>div{position:relative}
+
+.gallery-large{
+  grid-row:1/3;
+  background-image:url("assets/images/street-club/venue-03.jpeg")
+}
+
+.photo-4{
+  background-image:url("assets/images/street-club/venue-04.jpeg")
+}
+
+.gallery-copy{
+  padding:25px 30px;
+  background:var(--accent)!important;
+  color:#090909;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  z-index:2
+}
+
+.gallery-copy span{
+  font-size:10px;
+  letter-spacing:2px
+}
+
+.gallery-copy strong{
+  font:500 clamp(42px,5vw,72px)/.82 Oswald;
+  text-transform:uppercase
+}
+
+.gallery-copy em{
+  font:10px Oswald;
+  letter-spacing:2px;
+  font-style:normal
+}
+
+
+/* VISIT */
+
+.visit{
+  min-height:88vh;
+  position:relative;
+  padding:120px 7vw;
+  display:flex;
+  align-items:center
+}
+
+.visit-bg{
+  position:absolute;
+  inset:0;
+  background-image:url("assets/images/street-club/visit.jpg")
+}
+
+.visit-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.48))
+}
+
+.visit-content{
+  position:relative;
+  width:100%;
+  max-width:var(--max);
+  margin:auto
+}
+
+.visit h2{
+  margin:45px 0 65px
+}
+
+.visit-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  border-top:1px solid var(--line);
+  padding-top:25px;
+  margin-bottom:50px
+}
+
+.visit-grid small{
+  display:block;
+  margin-bottom:12px
+}
+
+.visit-grid p{
+  font-size:15px;
+  line-height:1.6;
+  color:#ddd
+}
+
+.visit-grid a{
+  border-bottom:1px solid #777
+}
+
+
+/* FOOTER */
+
+footer{
+  padding:65px 7vw 25px;
+  background:#050505
+}
+
+.footer-top{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:70px
+}
+
+.footer-top small{
+  display:block;
+  margin-bottom:15px
+}
+
+.footer-top p{
+  color:#aaa59c;
+  font-size:13px;
+  line-height:1.7
+}
+
+.footer-bottom{
+  border-top:1px solid var(--line);
+  padding-top:18px;
+  display:flex;
+  justify-content:space-between;
+  color:#666;
+  font-size:9px;
+  letter-spacing:1.5px;
+  text-transform:uppercase
+}
+
+
+/* REVEALS */
+
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:none
+}
+
+
+/* ORIGINAL MOBILE HERO ANIMATION */
+
+@keyframes heroIn{
+  from{
+    transform:scale(1.12);
+    filter:brightness(.6)
+  }
+  to{
+    transform:scale(1.03);
+    filter:brightness(1)
+  }
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .nav{
+    padding:18px 20px
+  }
+
+  .nav.scrolled{
+    padding:12px 20px
+  }
+
+  .nav nav{
+    position:fixed;
+    inset:0;
+    display:flex;
+    visibility:hidden;
+    opacity:0;
+    pointer-events:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:24px;
+    padding:90px 28px;
+    background:rgba(9,9,9,.97);
+    backdrop-filter:blur(20px);
+    transition:opacity .3s,visibility .3s
+  }
+
+  .nav nav.open{
+    visibility:visible;
+    opacity:1;
+    pointer-events:auto
+  }
+
+  .nav nav a{
+    font:500 48px/.95 Oswald;
+    text-transform:uppercase;
+    letter-spacing:-.5px
+  }
+
+  .nav nav a:after{
+    display:none
+  }
+
+  .nav-cta{
+    display:none
+  }
+
+  .menu{
+    display:flex;
+    position:relative;
+    z-index:2;
+    flex-direction:column;
+    gap:6px;
+    background:none;
+    border:0;
+    padding:8px
+  }
+
+  .menu i{
+    display:block;
+    width:25px;
+    height:1px;
+    background:#fff;
+    transition:transform .25s
+  }
+
+  .menu.open i:first-child{
+    transform:translateY(3.5px) rotate(45deg)
+  }
+
+  .menu.open i:last-child{
+    transform:translateY(-3.5px) rotate(-45deg)
+  }
+
+  .hero{
+    padding:0 20px 72px;
+    min-height:100svh
+  }
+
+  /*
+    IMPORTANT:
+    Mobile continues using venue-04.jpeg.
+  */
+  .hero-bg{
+    background-image:url("assets/images/street-club/venue-04.jpeg");
+    background-position:60% center
+  }
+
+  .hero-overlay{
+    background:
+      linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.2)),
+      linear-gradient(0deg,rgba(0,0,0,.85),transparent 60%)
+  }
+
+  .hero-index{
+    right:20px;
+    top:40%;
+    font-size:8px
+  }
+
+  h1{
+    font-size:clamp(62px,18vw,105px);
+    letter-spacing:-2px
+  }
+
+  .hero-copy{
+    font-size:15px;
+    margin:20px 0
+  }
+
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch
+  }
+
+  .hero-bottom{
+    left:20px;
+    right:20px;
+    bottom:18px;
+    font-size:8px
+  }
+
+  .hero-bottom .scroll{
+    display:none
+  }
+
+  .section-pad{
+    padding:90px 20px
+  }
+
+  .intro-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+    margin-top:40px
+  }
+
+  .intro h2,
+  .events h2{
+    font-size:58px
+  }
+
+  .intro-copy p{
+    font-size:16px
+  }
+
+  .feature-image{
+    height:58vh
+  }
+
+  .split{
+    grid-template-columns:1fr;
+    min-height:auto
+  }
+
+  .split-copy{
+    padding:90px 20px
+  }
+
+  .split-copy h2{
+    font-size:65px;
+    margin:35px 0
+  }
+
+  .split-photo{
+    height:65vh
+  }
+
+  .events-head{
+    display:block;
+    margin:40px 0
+  }
+
+  .events-head p{
+    margin-top:30px
+  }
+
+  .event-list article{
+    grid-template-columns:45px 1fr 20px;
+    padding:20px 0
+  }
+
+  .event-list h3{
+    font-size:25px
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+    grid-template-rows:60vh 35vh 22vh
+  }
+
+  .gallery-large{
+    grid-row:auto
+  }
+
+  .visit{
+    min-height:auto;
+    padding:90px 20px
+  }
+
+  .visit h2{
+    font-size:65px;
+    margin:35px 0 50px
+  }
+
+  .visit-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+    margin-bottom:40px
+  }
+
+  .footer-top{
+    grid-template-columns:1fr 1fr;
+    padding-bottom:45px
+  }
+
+  .footer-brand{
+    grid-column:1/-1
+  }
+
+  .footer-bottom{
+    gap:20px
+  }
+
+  .footer-bottom span:last-child{
+    display:none
+  }
+}
+
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion:reduce){
+  html{
+    scroll-behavior:auto
+  }
+
+  .reveal,
+  .hero-bg{
+    animation:none;
+    transition:none
+  }
+
+  .cursor,
+  .cursor-dot{
+    display:none
+  }
+}
+
+
 /* Reservations, event gallery and directions */
-section[id]{scroll-margin-top:95px}
-.event-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.event-card{display:block;border-bottom:1px solid var(--line)}
-.event-card img{display:block;width:100%;height:300px;object-fit:cover}
-.event-card>div{padding:24px 0}
-.event-card h3{font-size:30px;margin-top:12px}
-.event-card p,.reservation p{color:var(--muted);line-height:1.7}
-.event-card span{font-size:11px;color:var(--accent);letter-spacing:1px}
-.event-card:hover h3{color:var(--accent)}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
-.reservation-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw;margin-top:50px}
-.reservation h2{font-size:clamp(50px,6.8vw,100px);line-height:.9}
-.reservation h2 span{color:var(--accent)}
-.reservation label{display:block;font-size:12px;margin-bottom:10px}
-.reservation input,.reservation select,.reservation textarea{width:100%;padding:14px;background:#181816;color:var(--text);border:1px solid var(--line);font:inherit;min-width:0;color-scheme:dark;margin-bottom:22px}
-.reservation-fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.reservation button{width:100%;border:0;cursor:pointer;font-family:inherit;line-height:1.5}
-.reservation .reservation-note{font-size:12px}
-.map-section{padding:0 7vw 65px}
-.map-section iframe{display:block;width:100%;height:450px;border:0}
-.map-section .text-link{display:inline-block}
-@media(max-width:800px){.event-gallery,.reservation-grid{grid-template-columns:1fr}.event-card img{height:280px}.reservation-grid{gap:30px}.nav nav{gap:18px}.nav nav a{font-size:38px}.map-section{padding:0 20px 45px}.map-section iframe{height:350px}}
-@media(max-width:380px){.reservation-fields{grid-template-columns:1fr}}
+
+section[id]{
+  scroll-margin-top:95px
+}
+
+.event-gallery{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px
+}
+
+.event-card{
+  display:block;
+  border-bottom:1px solid var(--line)
+}
+
+.event-card img{
+  display:block;
+  width:100%;
+  height:300px;
+  object-fit:cover
+}
+
+.event-card>div{
+  padding:24px 0
+}
+
+.event-card h3{
+  font-size:30px;
+  margin-top:12px
+}
+
+.event-card p,
+.reservation p{
+  color:var(--muted);
+  line-height:1.7
+}
+
+.event-card span{
+  font-size:11px;
+  color:var(--accent);
+  letter-spacing:1px
+}
+
+.event-card:hover h3{
+  color:var(--accent)
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:5px
+}
+
+.reservation-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8vw;
+  margin-top:50px
+}
+
+.reservation h2{
+  font-size:clamp(50px,6.8vw,100px);
+  line-height:.9
+}
+
+.reservation h2 span{
+  color:var(--accent)
+}
+
+.reservation label{
+  display:block;
+  font-size:12px;
+  margin-bottom:10px
+}
+
+.reservation input,
+.reservation select,
+.reservation textarea{
+  width:100%;
+  padding:14px;
+  background:#181816;
+  color:var(--text);
+  border:1px solid var(--line);
+  font:inherit;
+  min-width:0;
+  color-scheme:dark;
+  margin-bottom:22px
+}
+
+.reservation-fields{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px
+}
+
+.reservation button{
+  width:100%;
+  border:0;
+  cursor:pointer;
+  font-family:inherit;
+  line-height:1.5
+}
+
+.reservation .reservation-note{
+  font-size:12px
+}
+
+.map-section{
+  padding:0 7vw 65px
+}
+
+.map-section iframe{
+  display:block;
+  width:100%;
+  height:450px;
+  border:0
+}
+
+.map-section .text-link{
+  display:inline-block
+}
+
+@media(max-width:800px){
+
+  .event-gallery,
+  .reservation-grid{
+    grid-template-columns:1fr
+  }
+
+  .event-card img{
+    height:280px
+  }
+
+  .reservation-grid{
+    gap:30px
+  }
+
+  .nav nav{
+    gap:18px
+  }
+
+  .nav nav a{
+    font-size:38px
+  }
+
+  .map-section{
+    padding:0 20px 45px
+  }
+
+  .map-section iframe{
+    height:350px
+  }
+}
+
+@media(max-width:380px){
+  .reservation-fields{
+    grid-template-columns:1fr
+  }
+}
+
 
 /* Direct contact actions */
-.floating-contact{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:95;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 6px 24px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.22);transition:transform .2s,filter .2s}
-.floating-contact svg{display:block;width:28px;height:28px}
-.floating-call{left:calc(24px + env(safe-area-inset-left,0px));background:#1675d1}
-.floating-whatsapp{right:calc(24px + env(safe-area-inset-right,0px));background:#25d366}
-.floating-contact:hover{transform:translateY(-3px);filter:brightness(1.08)}
-body.menu-open .floating-contact{visibility:hidden}
-footer{padding-bottom:110px}
-@media(max-width:800px){.floating-contact{width:52px;height:52px;bottom:calc(18px + env(safe-area-inset-bottom,0px))}.floating-call{left:calc(16px + env(safe-area-inset-left,0px))}.floating-whatsapp{right:calc(16px + env(safe-area-inset-right,0px))}.floating-contact svg{width:26px;height:26px}}
-@media(prefers-reduced-motion:reduce){.floating-contact{transition:none}}
 
-/* Desktop hero quality: avoid unnecessary upscaling/overscan while preserving mobile presentation. */
-@keyframes heroInDesktop{from{transform:scale(1.025);filter:brightness(.72)}to{transform:scale(1);filter:brightness(1)}}
-@media(min-width:801px){.hero-bg{inset:0;transform:none;background-position:center center;background-size:cover;image-rendering:auto;animation:heroInDesktop 1.2s cubic-bezier(.2,.7,.2,1) both;will-change:transform}.hero{min-height:100vh;min-height:100svh}}
+.floating-contact{
+  position:fixed;
+  bottom:calc(24px + env(safe-area-inset-bottom,0px));
+  z-index:95;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  box-shadow:0 6px 24px rgba(0,0,0,.4);
+  border:1px solid rgba(255,255,255,.22);
+  transition:transform .2s,filter .2s
+}
+
+.floating-contact svg{
+  display:block;
+  width:28px;
+  height:28px
+}
+
+.floating-call{
+  left:calc(24px + env(safe-area-inset-left,0px));
+  background:#1675d1
+}
+
+.floating-whatsapp{
+  right:calc(24px + env(safe-area-inset-right,0px));
+  background:#25d366
+}
+
+.floating-contact:hover{
+  transform:translateY(-3px);
+  filter:brightness(1.08)
+}
+
+body.menu-open .floating-contact{
+  visibility:hidden
+}
+
+footer{
+  padding-bottom:110px
+}
+
+@media(max-width:800px){
+
+  .floating-contact{
+    width:52px;
+    height:52px;
+    bottom:calc(18px + env(safe-area-inset-bottom,0px))
+  }
+
+  .floating-call{
+    left:calc(16px + env(safe-area-inset-left,0px))
+  }
+
+  .floating-whatsapp{
+    right:calc(16px + env(safe-area-inset-right,0px))
+  }
+
+  .floating-contact svg{
+    width:26px;
+    height:26px
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .floating-contact{
+    transition:none
+  }
+}
+
+
+/* =========================================================
+   HIGH-QUALITY DESKTOP HERO
+   ========================================================= */
+
+@keyframes heroInDesktop{
+  from{
+    transform:scale(1.015);
+    filter:brightness(.72)
+  }
+
+  to{
+    transform:scale(1);
+    filter:brightness(1)
+  }
+}
+
+/*
+  Desktop only:
+  Use the generated high-resolution hero.
+
+  Mobile is unaffected by this rule.
+*/
+@media(min-width:801px){
+
+  .hero{
+    min-height:100vh;
+    min-height:100svh
+  }
+
+  .hero-bg{
+    background-image:url("assets/images/street-club/desktop-hero.png");
+    inset:0;
+    transform:none;
+    background-position:center center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    image-rendering:auto;
+    animation:heroInDesktop 1.2s cubic-bezier(.2,.7,.2,1) both;
+    will-change:transform
+  }
+}

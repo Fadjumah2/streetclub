@@ -1,6 +1,9 @@
 # Street Club Entebbe
 
-A polished, Vercel-ready one-page website concept for Street Club Entebbe.
+A polished one-page website for Street Club Entebbe, hosted on GitHub Pages.
+
+## Live site
+https://fadjumah2.github.io/streetclub/
 
 ## Stack
 - HTML
@@ -8,8 +11,10 @@ A polished, Vercel-ready one-page website concept for Street Club Entebbe.
 - Vanilla JavaScript
 - No build step required
 
-## Deploy to Vercel
-Import this GitHub repository into Vercel. The site is static and can deploy with the default settings.
+## Deployment
+The site deploys automatically to GitHub Pages whenever changes are pushed to the `main` branch.
+
+Deployment is handled by `.github/workflows/deploy-pages.yml` using the official GitHub Pages Actions workflow.
 
 ## Business information used
 - Street Club Entebbe
@@ -21,4 +26,4 @@ Import this GitHub repository into Vercel. The site is static and can deploy wit
 Business details were checked against current public listings before building the concept. Hours and event programming should be confirmed with the venue before launch.
 
 ## Before selling / launch
-Replace the generic Instagram destination with the club's verified Instagram profile and replace stock imagery with the venue's own approved photographs where available.
+Replace any placeholder event or DJ information with confirmed venue information and keep the club's approved photographs and social links current.

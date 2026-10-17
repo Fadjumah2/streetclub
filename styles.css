@@ -906,11 +906,12 @@ footer{
 
   .gallery{
     grid-template-columns:1fr;
-    grid-template-rows:60vh 35vh 22vh
+    grid-template-rows:35vh 22vh
   }
 
+  /* Hide only the large venue-03 gallery photograph below reservations on mobile. */
   .gallery-large{
-    grid-row:auto
+    display:none
   }
 
   .visit{

@@ -3,6 +3,9 @@ const nav=document.getElementById("site-nav"),menu=document.querySelector(".menu
 const closeMenu=()=>{mobileNav?.classList.remove("open");menu?.classList.remove("open");menu?.setAttribute("aria-expanded","false");document.body.classList.remove("menu-open")};
 menu?.addEventListener("click",()=>{const open=!mobileNav.classList.contains("open");mobileNav.classList.toggle("open",open);menu.classList.toggle("open",open);menu.setAttribute("aria-expanded",String(open));document.body.classList.toggle("menu-open",open)});
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",()=>{closeMenu()}));
+mobileNav?.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
+document.addEventListener("keydown",event=>{if(event.key==="Escape"&&mobileNav?.classList.contains("open")){closeMenu();menu?.focus()}});
+document.addEventListener("click",event=>{if(mobileNav?.classList.contains("open")&&!nav?.contains(event.target))closeMenu()});
 const progress=document.querySelector(".progress");window.addEventListener("scroll",()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=max>0?((scrollY/max)*100)+"%":"0%";nav?.classList.toggle("scrolled",scrollY>30)},{passive:true});
 const reveal=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");reveal.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll(".reveal").forEach(el=>reveal.observe(el));
 const sections=[...document.querySelectorAll("main section[id]")],links=[...document.querySelectorAll("[data-nav]")];const active=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle("active",l.dataset.nav===e.target.id))}),{rootMargin:"-35% 0px -55% 0px"});sections.forEach(s=>active.observe(s));

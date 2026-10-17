@@ -23,3 +23,18 @@ reservationForm?.addEventListener("submit",event=>{
   const message="Hi Street Club Entebbe! I'd like to request a reservation.\nSpace: "+details.get("space")+"\nDate: "+details.get("date")+"\nGuests: "+details.get("guests")+(String(details.get("note")||"").trim()?"\nNotes: "+String(details.get("note")).trim():"")+"\nPlease confirm availability.";
   window.location.assign("https://wa.me/256705447013?text="+encodeURIComponent(message));
 });
+
+
+// Avoid loading the third-party Google Maps iframe until the visitor requests it.
+const loadMapButton=document.getElementById("load-map");
+loadMapButton?.addEventListener("click",()=>{
+  const preview=document.getElementById("map-preview");
+  if(!preview)return;
+  const iframe=document.createElement("iframe");
+  iframe.title="Google Maps: Street Club Entebbe, Plot 105 Portal Road";
+  iframe.src="https://www.google.com/maps?q=Street%20Club%20Entebbe%2C%20Plot%20105%20Portal%20Road%2C%20Entebbe%2C%20Uganda&output=embed";
+  iframe.width="1200";iframe.height="450";
+  iframe.referrerPolicy="no-referrer-when-downgrade";
+  iframe.allowFullscreen=true;
+  preview.replaceWith(iframe);
+});

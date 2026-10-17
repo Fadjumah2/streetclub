@@ -1364,3 +1364,46 @@ footer{
 @media (prefers-reduced-motion:reduce) {
   .nav nav {transition:none}
 }
+
+
+/* Standalone pages: consistent branded editorial layout. */
+.interior-page .nav {background:rgba(9,9,9,.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.1)}
+.nav nav a[aria-current="page"] {color:var(--accent);opacity:1}
+.page-hero {min-height:75vh;min-height:75svh;position:relative;display:flex;align-items:flex-end;overflow:hidden;padding:175px 7vw 100px}
+.page-hero-image,.page-hero-shade {position:absolute;inset:0}
+.page-hero-image {background-position:center;background-size:cover;background-repeat:no-repeat}
+.page-hero-shade {background:linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.24)),linear-gradient(0deg,rgba(0,0,0,.78),transparent 75%)}
+.page-hero-inner {position:relative;width:min(100%,1080px)}
+.page-hero h1 {font-size:clamp(65px,9vw,140px);line-height:.92}
+.page-hero h1 em {color:var(--accent);font-style:normal}
+.page-hero-inner>p:not(.eyebrow) {max-width:620px;color:#e5e1d9;font-size:clamp(16px,1.5vw,20px);line-height:1.7;margin:30px 0}
+.page-action-row {display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.page-section {padding:100px 7vw;max-width:1440px;margin:auto}
+.page-kicker {font:600 11px "DM Sans",sans-serif;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:30px}
+.page-section h2 {font-size:clamp(49px,6.5vw,94px);line-height:.96;max-width:1100px}
+.page-section h2 span {color:var(--accent)}
+.page-feature-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:65px}
+.page-feature-grid article {border-top:1px solid var(--line);padding:25px 12px 15px 0}
+.page-feature-grid h3 {font-size:clamp(24px,2.4vw,34px);line-height:1.15}
+.page-feature-grid p,.page-social p {font-size:16px;line-height:1.75;color:var(--muted);max-width:520px}
+.page-feature-grid a {text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+.page-image-band {height:min(70vh,720px);overflow:hidden}
+.page-image-band img {width:100%;height:100%;object-fit:cover;display:block}
+.page-invite {display:flex;align-items:center;justify-content:space-between;gap:40px}
+.page-invite .btn {flex-shrink:0}
+.page-social {border-top:1px solid var(--line);padding-top:85px;padding-bottom:90px}
+.page-social .btn {margin-top:24px}
+.interior-page .reservation {max-width:1440px}
+@media(max-width:800px){
+ .page-hero {min-height:74svh;padding:135px 20px 70px}
+ .page-hero h1 {font-size:clamp(52px,13vw,78px);letter-spacing:-1px}
+ .page-hero-inner>p:not(.eyebrow){font-size:15px}
+ .page-action-row .btn {gap:20px}
+ .page-section {padding:75px 20px}
+ .page-section h2 {font-size:clamp(44px,11vw,65px)}
+ .page-feature-grid {grid-template-columns:1fr;gap:10px;margin-top:35px}
+ .page-feature-grid article {padding:24px 0}
+ .page-image-band {height:48vh}
+ .page-invite {display:block}
+ .page-invite .btn {margin-top:35px}
+}

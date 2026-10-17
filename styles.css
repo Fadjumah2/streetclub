@@ -800,10 +800,10 @@ footer{
 
   /*
     IMPORTANT:
-    Mobile continues using venue-04.jpeg.
+    Mobile uses the same high-resolution image as desktop.
   */
   .hero-bg{
-    background-image:url("assets/images/street-club/venue-04.jpeg");
+    background-image:url("assets/images/street-club/desktop-hero.png.png");
     background-position:60% center
   }
 

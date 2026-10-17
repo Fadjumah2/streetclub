@@ -1407,3 +1407,9 @@ footer{
  .page-invite {display:block}
  .page-invite .btn {margin-top:35px}
 }
+
+/* Attribution and transparent labeling for illustrative stock imagery. */
+.page-hero .page-photo-note {position:absolute;right:7vw;bottom:18px;z-index:3;font-size:10px;letter-spacing:.3px;color:rgba(255,255,255,.7);text-align:right}
+.page-additional-image {position:relative;margin:0}
+.page-additional-image figcaption {position:absolute;right:16px;bottom:16px;background:rgba(9,9,9,.75);padding:7px 10px;color:#e4dfd6;font-size:10px;letter-spacing:.2px}
+@media(max-width:800px){.page-hero .page-photo-note{right:20px;bottom:9px;max-width:85%;font-size:9px}.page-additional-image figcaption{right:8px;bottom:8px;font-size:9px}}

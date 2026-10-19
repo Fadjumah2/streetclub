@@ -391,7 +391,7 @@ h1 em{
 .feature-photo{
   position:absolute;
   inset:0;
-  background-image:url("assets/images/street-club/Street%20Club%20Neon%20Nightlife%20Scene.png");
+  background-image:url("assets/images/street-club/experience-venue.webp");
   transition:transform 1.2s cubic-bezier(.2,.7,.2,1)
 }
 
@@ -803,7 +803,7 @@ footer{
     Mobile uses the same high-resolution image as desktop.
   */
   .hero-bg{
-    background-image:url("assets/images/street-club/desktop-hero.png.png");
+    background-image:url("assets/images/street-club/hero-mobile.webp");
     background-position:60% center
   }
 
@@ -1241,7 +1241,7 @@ footer{
   }
 
   .hero-bg{
-    background-image:url("assets/images/street-club/desktop-hero.png.png");
+    background-image:url("assets/images/street-club/hero-desktop.webp");
     inset:0;
     transform:none;
     background-position:center center;

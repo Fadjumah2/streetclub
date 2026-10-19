@@ -1,0 +1,72 @@
+name: Optimize website imagery
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'assets/images/street-club/*.png'
+      - '.github/workflows/optimize-images.yml'
+permissions:
+  contents: write
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet Pillow
+      - name: Create responsive, compressed WebP files
+        run: |
+          python - <<'PY'
+          from PIL import Image, ImageOps
+          from pathlib import Path
+          p=Path("assets/images/street-club")
+          photos={
+            "desktop-hero.png.png":[("hero-mobile.webp",900),("hero-desktop.webp",1800)],
+            "Street Club Neon Nightlife Scene.png":[("experience-venue.webp",1500),("venue-card.webp",800)]
+          }
+          for source,variants in photos.items():
+              with Image.open(p/source) as im:
+                  im=ImageOps.exif_transpose(im).convert("RGB")
+                  for target,max_width in variants:
+                      out=im.copy()
+                      out.thumbnail((max_width,10000),Image.Resampling.LANCZOS)
+                      out.save(p/target,"WEBP",quality=80,method=6)
+                      print(source,"->",target,(p/target).stat().st_size)
+          PY
+      - name: Update hero and image references after conversion
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          css=Path("styles.css")
+          text=css.read_text()
+          # High-quality optimized hero on both mobile and desktop.
+          text=text.replace('assets/images/street-club/desktop-hero.png.png','assets/images/street-club/hero-desktop.webp')
+          mobile=text.index('/* MOBILE */')
+          stop=text.index('/* ACCESSIBILITY */',mobile)
+          mid=text[mobile:stop].replace('assets/images/street-club/hero-desktop.webp','assets/images/street-club/hero-mobile.webp')
+          text=text[:mobile]+mid+text[stop:]
+          text=text.replace('assets/images/street-club/Street%20Club%20Neon%20Nightlife%20Scene.png','assets/images/street-club/experience-venue.webp')
+          css.write_text(text)
+          for file in ["index.html","experience.html","nights.html","events.html","vip.html","visit.html"]:
+              path=Path(file)
+              html=path.read_text()
+              html=html.replace('assets/images/street-club/Street%20Club%20Neon%20Nightlife%20Scene.png','assets/images/street-club/venue-card.webp')
+              if file=="index.html":
+                  hint='<link rel="preload" as="image" href="assets/images/street-club/hero-mobile.webp" media="(max-width:800px)">\n  <link rel="preload" as="image" href="assets/images/street-club/hero-desktop.webp" media="(min-width:801px)">'
+                  if 'hero-mobile.webp" media=' not in html:
+                      html=html.replace('</head>',f'  {hint}\n</head>')
+              path.write_text(html)
+          PY
+      - name: Commit optimized images and updated references
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/images/street-club/*.webp styles.css index.html experience.html nights.html events.html vip.html visit.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Optimize hero and gallery images for faster loading"
+            git push
+          fi
